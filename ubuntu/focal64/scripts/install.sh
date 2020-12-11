@@ -35,3 +35,6 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash postfix-install.sh
 rm postfix-install.sh
 
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/mailcatcher-install.sh
+bash mailcatcher-install.sh
+rm mailcatcher-install.sh
