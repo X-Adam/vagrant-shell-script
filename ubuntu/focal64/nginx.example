@@ -1,0 +1,30 @@
+server {
+    listen 80;
+    server_name api.example-domain.com api.local.example-domain.com;
+
+    root /var/www/example-domain.com/Www;
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    include snippets/phpmyadmin.conf;
+
+    charset utf-8;
+    error_page 404 /index.php;
+
+    location = /favicon.ico {access_log off; log_not_found off;}
+    location = /robots.txt  {access_log off; log_not_found off;}
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
