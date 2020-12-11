@@ -5,6 +5,9 @@ sudo su
 apt update -y
 apt upgrade -y
 
+# Zaman dilimini ayarlanıyor
+timedatectl set-timezone $TIMEZONE
+
 # Temel paketler kuruluyor.
 apt install curl -y
 apt install git -y

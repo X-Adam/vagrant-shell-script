@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
 
 	# İlk kurulumda çalışan betik
 	config.vm.provision "shell", path: "https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/install.sh", env: {
+	    "TIMEZONE" => "Europe/Istanbul",
 	    "DOMAIN" => "example-domain.com",
 	    "DB_PASSWORD" => "secret"
 	}
