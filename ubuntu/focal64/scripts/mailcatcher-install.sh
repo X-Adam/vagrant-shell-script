@@ -4,7 +4,7 @@
 apt install make build-essential sqlite3 libsqlite3-dev ruby-dev -y
 
 # mailcatcher kuruluyor.
-gem install mailcatcher
+gem install -N mailcatcher
 
 # mailcatcher başlatılıyor.
 mailcatcher --ip=0.0.0.0
