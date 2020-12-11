@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+	# Vagrant kutusu
+	config.vm.box = "ubuntu/focal64"
+
+	# Port yönlendirme
+	config.vm.network "forwarded_port", guest: 80, host: 80
+	config.vm.network "forwarded_port", guest: 3306, host: 3306
+	config.vm.network "forwarded_port", guest: 1080, host: 1080
+
+	# İnce ayarlar
+	config.vm.provider "virtualbox" do |vb|
+		vb.name = "api.local.example-domain.com"
+		vb.cpus = 1
+		vb.memory = 4096
+	end
+
+	# İlk kurulumda çalışan betik
+	config.vm.provision "shell", path: "https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/install.sh", env: {
+	    "DOMAIN" => "example-domain.com",
+	    "DB_PASSWORD" => "secret"
+	}
+
+	# Her açılışta çalışacak betik
+	config.vm.provision "shell", run: "always", inline: <<-SHELL
+		service nginx reload;
+		echo "Happy codings :).";
+	SHELL
+end
