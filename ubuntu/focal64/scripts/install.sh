@@ -26,3 +26,7 @@ rm mysql-install.sh
 wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/phpmyadmin-install.sh
 bash phpmyadmin-install.sh
 rm phpmyadmin-install.sh
+
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/nodejs-install.sh
+bash nodejs-install.sh
+rm nodejs-install.sh
