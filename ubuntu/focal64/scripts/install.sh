@@ -45,3 +45,6 @@ bash mailcatcher-install.sh
 rm mailcatcher-install.sh
 
 echo 'The installation has been completed successfully.' "$(($SECONDS / 60)) minutes and $(($SECONDS % 60)) seconds elapsed."
+
+echo "Don't forget to add the following entry to the hosts file:"
+echo "127.0.0.1 $DOMAIN";
