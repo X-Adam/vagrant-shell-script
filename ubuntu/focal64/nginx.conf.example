@@ -1,8 +1,8 @@
 server {
     listen 80;
-    server_name api.example-domain.com api.local.example-domain.com;
+    server_name api.local.example-domain.com;
 
-    root /var/www/example-domain.com/Api;
+    root /var/www/example-domain.com/Api/public;
     index index.html index.htm index.php;
 
     location / {
