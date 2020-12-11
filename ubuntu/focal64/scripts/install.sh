@@ -1,6 +1,8 @@
 #!/bin/bash
 sudo su
 
+SECONDS=0
+
 # Paketler güncelleniyor.
 apt update -y
 apt upgrade -y
@@ -41,3 +43,6 @@ rm postfix-install.sh
 wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/mailcatcher-install.sh
 bash mailcatcher-install.sh
 rm mailcatcher-install.sh
+
+echo 'The installation has been completed successfully.' "$(($SECONDS / 60)) minutes and $(($SECONDS % 60)) seconds elapsed."
+echo "$(($SECONDS / 60)) minutes and $(($SECONDS % 60)) seconds elapsed."
