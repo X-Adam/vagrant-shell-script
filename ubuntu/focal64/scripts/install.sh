@@ -44,6 +44,10 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash mailcatcher-install.sh
 rm mailcatcher-install.sh
 
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/supervisor-install.sh
+bash supervisor-install.sh
+rm supervisor-install.sh
+
 echo 'The installation has been completed successfully.' "$(($SECONDS / 60)) minutes and $(($SECONDS % 60)) seconds elapsed."
 
 echo "Don't forget to add the following entry to the hosts file:"
