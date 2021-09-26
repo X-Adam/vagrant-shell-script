@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
 	config.vm.provision "shell", path: "https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/install.sh", env: {
 	    "TIMEZONE" => "Europe/Istanbul",
 	    "DOMAIN" => "example-domain.com",
+	    "DIR" => "Api",
 	    "DB_PASSWORD" => "secret"
 	}
 

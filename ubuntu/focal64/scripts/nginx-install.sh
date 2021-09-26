@@ -7,7 +7,7 @@ sed -i "/sites-enabled/a \        include /var/www/*/*/nginx.conf;" /etc/nginx/n
 # Proje dizini oluşturuluyor, klasör sahibi değiştiriliyor, paylaşılan klasör kısayol olarak ekleniyor.
 mkdir /var/www/$DOMAIN
 chown ubuntu:ubuntu /var/www/$DOMAIN
-ln -s /vagrant /var/www/$DOMAIN/Api
+ln -s /vagrant /var/www/$DOMAIN/$DIR
 
 if [ ! -f /vagrant/nginx.conf ]; then
   wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/nginx.conf.example --output-document=/vagrant/nginx.conf
