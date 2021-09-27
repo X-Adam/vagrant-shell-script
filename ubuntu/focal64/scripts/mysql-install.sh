@@ -44,4 +44,6 @@ mysql -e "CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '$DB_P
 mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;"
 mysql -e "FLUSH PRIVILEGES;"
 
+mysql -e "CREATE DATABASE `system` CHARACTER SET `utf8mb4` COLLATE `utf8mb4_unicode_ci`;"    # System veritabanı oluşturuluyor.
+
 sudo systemctl restart mysql
