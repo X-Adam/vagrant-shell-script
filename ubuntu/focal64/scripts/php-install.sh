@@ -12,7 +12,7 @@ apt install php-memcached -y
 apt install php-imap -y
 apt install php-sybase -y
 apt install php-zip -y
-apt install php-bcmatch -y
+apt install php-bcmath -y
 apt install php-xdebug -y
 
 # PHP yapılandırılıyor.
