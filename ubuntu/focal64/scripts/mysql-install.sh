@@ -34,15 +34,15 @@ EOF
 # Script çalıştırılıyor.
 sudo expect ~/mysql-install.sh
 
-rm -v ~/secure_our_mysql.sh    # Script dosyası güvenlik amacıyla siliniyor.# Script dosyası güvenlik amacıyla siliniyor.
+rm -v ~/mysql-install.sh    # Script dosyası güvenlik amacıyla siliniyor.# Script dosyası güvenlik amacıyla siliniyor.
 #sudo apt -qq purge expect > /dev/null    # Expect'i kaldırın, Expect'e ihtiyacınız olması durumunda yorum yapın.
+
+mysql -e "CREATE DATABASE `system` CHARACTER SET `utf8mb4` COLLATE `utf8mb4_unicode_ci`;"    # System veritabanı oluşturuluyor.
 
 sed -i 's/= 127.0.0.1/= 0.0.0.0/g' /etc/mysql/mysql.conf.d/mysqld.cnf    # Uzaktan erişim ayarlanıyor.
 mysql -e "CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '$DB_PASSWORD';"
 mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;"
 mysql -e "FLUSH PRIVILEGES;"
-
-mysql -e "CREATE DATABASE `system` CHARACTER SET `utf8mb4` COLLATE `utf8mb4_unicode_ci`;"    # System veritabanı oluşturuluyor.
 
 mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$DB_PASSWORD';"
 
