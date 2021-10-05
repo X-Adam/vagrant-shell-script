@@ -13,6 +13,7 @@ apt install php-imap -y
 apt install php-sybase -y
 apt install php-zip -y
 apt install php-bcmath -y
+apt install php-redis -y
 apt install php-xdebug -y
 
 # PHP yapılandırılıyor.
