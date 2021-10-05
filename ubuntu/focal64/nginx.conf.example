@@ -16,6 +16,10 @@ server {
         include fastcgi_params;
     }
 
+    location /storage {
+        alias /var/www/otomicron.com/CRM/storage/app/public;
+    }
+
     include snippets/phpmyadmin.conf;
 
     charset utf-8;
