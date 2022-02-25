@@ -20,7 +20,7 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash nginx-install.sh
 rm nginx-install.sh
 
-wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/php-install.sh
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/php/install.sh
 bash php-install.sh
 rm php-install.sh
 

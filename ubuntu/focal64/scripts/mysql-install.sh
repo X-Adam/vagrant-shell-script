@@ -34,7 +34,7 @@ EOF
 # Script çalıştırılıyor.
 sudo expect ~/mysql-install.sh
 
-rm -v ~/mysql-install.sh    # Script dosyası güvenlik amacıyla siliniyor.# Script dosyası güvenlik amacıyla siliniyor.
+rm -v ~/mysql-install.sh    # Script dosyası güvenlik amacıyla siliniyor.
 #sudo apt -qq purge expect > /dev/null    # Expect'i kaldırın, Expect'e ihtiyacınız olması durumunda yorum yapın.
 
 mysql -e "CREATE DATABASE `system` CHARACTER SET `utf8mb4` COLLATE `utf8mb4_unicode_ci`;"    # System veritabanı oluşturuluyor.
