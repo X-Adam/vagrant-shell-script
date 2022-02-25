@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
 	# İlk kurulumda çalışan betik
 	config.vm.provision "shell", path: "https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/install.sh", env: {
 	    "TIMEZONE" => "Europe/Istanbul",
+	    "PHP_VERSION" => "7.4",
 	    "DOMAIN" => "example-domain.com",
 	    "DIR" => "Api",
 	    "DB_PASSWORD" => "secret"
@@ -25,6 +26,11 @@ Vagrant.configure("2") do |config|
 	# Her açılışta çalışacak betik
 	config.vm.provision "shell", run: "always", inline: <<-SHELL
 		service nginx reload;
+		rm -f /etc/supervisor/conf.d/*;
+		cp /var/www/example-domain.com/api/config/workers/* /etc/supervisor/conf.d;
+		supervisorctl reread;
+		supervisorctl update;
+		supervisorctl restart all;
 		echo "Happy codings :).";
 	SHELL
 end
