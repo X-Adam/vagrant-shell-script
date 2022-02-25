@@ -1,5 +1,6 @@
 server {
     listen 80;
+
     server_name api.local.example-domain.com;
 
     root /var/www/example-domain.com/Api/public;
@@ -11,19 +12,13 @@ server {
 
     location ~ \.php$ {
         fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
-        fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
     }
 
     location /storage {
-        alias /var/www/otomicron.com/CRM/storage/app/public;
+        alias /var/www/example-domain.com/Api/storage/app/public;
     }
-
-    include snippets/phpmyadmin.conf;
-
-    charset utf-8;
-    error_page 404 /index.php;
 
     location = /favicon.ico {access_log off; log_not_found off;}
     location = /robots.txt  {access_log off; log_not_found off;}
@@ -31,4 +26,10 @@ server {
     location ~ /\.(?!well-known).* {
         deny all;
     }
+
+    include snippets/phpmyadmin.conf;
+
+    error_page 404 /index.php;
+
+    charset utf-8;
 }
