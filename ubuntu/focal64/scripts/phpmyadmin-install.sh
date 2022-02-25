@@ -19,7 +19,6 @@ location /phpmyadmin {
         try_files \$uri =404;
         root /usr/share/;
         fastcgi_pass unix:/run/php/php7.4-fpm.sock;
-        fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         include /etc/nginx/fastcgi_params;
     }
