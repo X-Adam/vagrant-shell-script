@@ -10,6 +10,11 @@ apt upgrade -y
 # Zaman dilimini ayarlanıyor
 timedatectl set-timezone $TIMEZONE
 
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/swap-enable.sh
+bash swap-enable.sh
+rm swap-enable.sh
+
+
 # Temel paketler kuruluyor.
 apt install curl -y
 apt install git -y
