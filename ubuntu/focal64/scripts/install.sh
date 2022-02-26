@@ -60,6 +60,12 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash memcached-install.sh
 rm memcached-install.sh
 
+
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/cron-schedule.sh
+bash cron-schedule.sh
+rm cron-schedule.sh
+
+
 apt-get autoremove -y;
 apt-get clean -y;
 
