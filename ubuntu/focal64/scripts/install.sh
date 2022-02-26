@@ -55,6 +55,9 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash memcached-install.sh
 rm memcached-install.sh
 
+apt-get autoremove -y;
+apt-get clean -y;
+
 echo 'The installation has been completed successfully.' "$(($SECONDS / 60)) minutes and $(($SECONDS % 60)) seconds elapsed."
 
 echo "Don't forget to add the following entry to the hosts file:"
