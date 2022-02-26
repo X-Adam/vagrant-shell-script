@@ -23,6 +23,10 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash php-install.sh
 rm php-install.sh
 
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/composer-install.sh
+bash composer-install.sh
+rm composer-install.sh
+
 wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/mysql-install.sh
 bash mysql-install.sh
 rm mysql-install.sh
