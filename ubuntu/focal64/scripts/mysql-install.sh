@@ -44,7 +44,7 @@ mysql --user="root" -e "CREATE USER 'dba'@'%' IDENTIFIED BY '$DB_PASSWORD';"
 mysql --user="root" -e "GRANT ALL PRIVILEGES ON *.* TO 'dba'@'0.0.0.0' WITH GRANT OPTION;"
 mysql --user="root" -e "GRANT ALL PRIVILEGES ON *.* TO 'dba'@'%' WITH GRANT OPTION;"
 mysql --user="root" -e "FLUSH PRIVILEGES;"
-mysql --user="root" -e "CREATE DATABASE `system` CHARACTER SET `utf8mb4` COLLATE `utf8mb4_unicode_ci`;"
+mysql --user="root" -e 'CREATE DATABASE `system` CHARACTER SET `utf8mb4` COLLATE `utf8mb4_unicode_ci`;'
 
 # Configure MySQL Remote Access
 sed -i '/^bind-address/s/bind-address.*=.*/bind-address = 0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
