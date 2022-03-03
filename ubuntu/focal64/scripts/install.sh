@@ -60,6 +60,10 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash supervisor-install.sh
 rm supervisor-install.sh
 
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/redis-install.sh
+bash redis-install.sh
+rm redis-install.sh
+
 wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/memcached-install.sh
 bash memcached-install.sh
 rm memcached-install.sh
