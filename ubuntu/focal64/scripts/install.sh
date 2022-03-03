@@ -36,6 +36,10 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash mysql-install.sh
 rm mysql-install.sh
 
+wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/mongodb-install.sh
+bash mongodb-install.sh
+rm mongodb-install.sh
+
 wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/phpmyadmin-install.sh
 bash phpmyadmin-install.sh
 rm phpmyadmin-install.sh
