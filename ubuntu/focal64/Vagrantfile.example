@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
 	    "TIMEZONE" => "Europe/Istanbul",
 	    "PHP_VERSION" => "7.4",
 	    "DOMAIN" => "example-domain.com",
-	    "DIR" => "Api",
+	    "DIR" => "api",
 	    "DB_PASSWORD" => "secret"
 	}
 

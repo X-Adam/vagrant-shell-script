@@ -73,6 +73,7 @@ wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu
 bash cron-schedule.sh
 rm cron-schedule.sh
 
+echo "127.0.0.1 $DIR.local.$DOMAIN" >> /etc/hosts
 
 apt-get autoremove -y;
 apt-get clean -y;
