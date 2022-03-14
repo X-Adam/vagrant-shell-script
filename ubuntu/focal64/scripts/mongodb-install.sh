@@ -13,3 +13,7 @@ mongo --eval 'db.createUser({
 	pwd: "secret",
 	roles: [{role: "userAdminAnyDatabase", db: "admin"}]
 });'
+
+# Configure MongoDB Remote Access
+sed -i '/^  bindIp/s/bindIp:.*/bindIp: 0.0.0.0/' /etc/mongod.conf
+systemctl restart mongod
