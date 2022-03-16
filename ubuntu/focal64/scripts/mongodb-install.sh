@@ -8,7 +8,7 @@ sudo systemctl start mongod.service
 sudo systemctl enable mongod
 
 # Varsayılan kullanıcı oluşturuluyor.
-mongo admin --eval "db.createUser({user:'dba',pwd:'$DB_PASSWORD',roles:['root']})";
+mongo admin --eval "db.createUser({user:'dba',pwd:'secret',roles:['root']})";
 
 # Configure MongoDB Remote Access
 sed -i '/^  bindIp/s/bindIp:.*/bindIp: 0.0.0.0/' /etc/mongod.conf
