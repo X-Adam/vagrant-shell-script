@@ -8,11 +8,17 @@ sudo systemctl start mongod.service
 sudo systemctl enable mongod
 
 # Varsayılan kullanıcı oluşturuluyor.
-mongo --eval 'db.createUser({
-	user: "dba",
-	pwd: "secret",
-	roles: [{role: "userAdminAnyDatabase", db: "admin"}]
-});'
+tee mongo-install.js > /dev/null << EOF
+use admin;
+db.createUser({
+user: "dba",
+pwd: "$DB_PASSWORD",
+roles: ["root"]
+});
+EOF
+
+mongo < mongo-install.js
+rm mongo-install.js
 
 # Configure MongoDB Remote Access
 sed -i '/^  bindIp/s/bindIp:.*/bindIp: 0.0.0.0/' /etc/mongod.conf
