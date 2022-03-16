@@ -13,7 +13,7 @@ use admin;
 db.createUser({
 user: "dba",
 pwd: "$DB_PASSWORD",
-roles: ["root"]
+roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]
 });
 EOF
 
