@@ -21,7 +21,6 @@ sed -i 's/;date.timezone =/date.timezone = Europe\/Istanbul/g' /etc/php/8.1/cgi/
 sed -i 's/;date.timezone =/date.timezone = Europe\/Istanbul/g' /etc/php/8.1/fpm/php.ini    # Zaman dilimi tanımlanıyor.
 
 cat >> /etc/php/8.1/mods-available/xdebug.ini << EOF
-
 xdebug.idekey="PHPSTORM"
 xdebug.remote_enable=1
 xdebug.remote_connect_back=1
@@ -30,7 +29,6 @@ xdebug.max_nesting_level=300
 xdebug.scream=0
 xdebug.cli_color=1
 xdebug.show_local_vars=1
-
 EOF
 
 service php8.1-fpm reload;

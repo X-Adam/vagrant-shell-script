@@ -25,11 +25,11 @@ bash nginx-install.sh
 rm nginx-install.sh
 
 wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/php/php-install.sh
-bash php-install.sh
+bash php-install.sh $PHP_VERSION
 rm php-install.sh
 
 wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/composer-install.sh
-bash composer-install.sh
+bash composer-install.sh $PHP_VERSION
 rm composer-install.sh
 
 wget https://raw.githubusercontent.com/X-Adam/vagrant-shell-script/master/ubuntu/focal64/scripts/mysql-install.sh
