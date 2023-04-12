@@ -1,6 +1,6 @@
 # vagrant-shell-script
-Vagrant ortamı için sanal sunucu ortamını hazırlayan script projesi.
+Vagrant üzerinde için sanal sunucu ortamını hazırlayan script projesi.
 
-Tüm Hakları BulutSis markasına aittir ve daha önceden yazılı izin alınmadan çoğaltılamaz ve kopylanamaz.
+Tüm Hakları BulutSis markasına aittir ve daha önceden yazılı izin alınmadan çoğaltılamaz ve kopyalanamaz.
 
 Copyright - 2020
